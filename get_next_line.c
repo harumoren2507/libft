@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 22:29:47 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/20 00:28:58 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/20 05:21:36 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,12 @@ char	*get_next_line(int fd)
 	return (line.str);
 }
 
+/*
 int	main(void)
 {
 	int		fd1;
 	char	*line1;
+
 	fd1 = open("sample1.txt", O_RDONLY);
 	//fd2 = open("sample2.txt", O_RDONLY);
 	if (fd1 == -1)
@@ -98,7 +100,7 @@ int	main(void)
 		line1 = get_next_line(fd1);
 		//line2 = get_next_line(fd2);
 		if (!line1) {
-			break;
+			break ;
 		}
 		if (line1)
 		{
@@ -113,3 +115,4 @@ __attribute__((destructor)) static void destructor(void)
 {
 	system("leaks -q a.out");
 }
+*/

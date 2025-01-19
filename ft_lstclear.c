@@ -24,7 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		del(current->content);
 		tmp = current->next;
-    free(current);
+		free(current);
 		current = tmp;
 	}
 	*lst = NULL;
@@ -61,4 +61,3 @@ int	main(void)
 		printf("After clearing the list, head is now NULL.\n");
 	return (0);
 }
-
