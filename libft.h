@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 05:03:55 by retoriya          #+#    #+#             */
-/*   Updated: 2024/04/19 18:33:47 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/20 00:17:39 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,37 @@ int					ft_lstsize(t_list *lst);
 t_list				*ft_lstnew(void *content);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+
+
+/**************************get_next_line******************************/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+
+# define READ_ERROR -2
+# define PUTC_ERROR 1
+# define OPEN_MAX 1024
+
+
+typedef struct s_buffer
+{
+	char	buffer[BUFFER_SIZE];
+	ssize_t	read_bytes;
+	char	*bufp;
+}			t_buffer;
+
+typedef struct s_string
+{
+	char	*str;
+	size_t	len;
+	size_t	capa;
+}			t_string;
+
+char		*get_next_line(int fd);
+int			ft_getc(int fd, t_buffer *buf);
+int			ft_putc(t_string *str, char c);
+void		init_string(t_string *str);
+int			finalize_line(t_string *line);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+
 #endif
